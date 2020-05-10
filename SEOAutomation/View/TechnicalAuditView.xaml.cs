@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace SEOAutomation.Implementation.View
+namespace SEOAutomation.View
 {
     /// <summary>
     /// Логика взаимодействия для TechnicalAuditView.xaml

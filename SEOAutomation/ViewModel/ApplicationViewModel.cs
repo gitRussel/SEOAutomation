@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace SEOAutomation.Implementation.ViewModel
+namespace SEOAutomation.ViewModel
 {
     public class ApplicationViewModel : BindableBase
     {

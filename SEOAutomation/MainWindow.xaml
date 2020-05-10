@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SEOAutomation"
-        xmlns:viewModels ="clr-namespace:SEOAutomation.Implementation.ViewModel"
-        xmlns:views ="clr-namespace:SEOAutomation.Implementation.View"
+        xmlns:viewModels ="clr-namespace:SEOAutomation.ViewModel"
+        xmlns:views ="clr-namespace:SEOAutomation.View"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 

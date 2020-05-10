@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SEOAutomation.Implementation.Model
+namespace SEOAutomation.Model
 {
     public class TechnicalAuditModel
     {

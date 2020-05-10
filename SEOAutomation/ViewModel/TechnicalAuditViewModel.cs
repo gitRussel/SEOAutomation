@@ -1,7 +1,6 @@
-﻿using SEOAutomation.Interfaces;
-using TechnicalAuditModule;
+﻿using TechnicalAuditModule;
 
-namespace SEOAutomation.Implementation.ViewModel
+namespace SEOAutomation.ViewModel
 {
     public class TechnicalAuditViewModel : BindableBase
     {

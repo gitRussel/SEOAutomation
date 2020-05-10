@@ -1,4 +1,4 @@
-﻿using SEOAutomation.Implementation.ViewModel;
+﻿using SEOAutomation.ViewModel;
 using System.Windows;
 
 namespace SEOAutomation

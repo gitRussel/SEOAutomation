@@ -10,11 +10,14 @@
     <Folder Include="Implementation\Resources\" />
     <Folder Include="Implementation\Configuration\" />
     <Folder Include="Implementation\Logger\" />
-    <Folder Include="Interfaces\" />
   </ItemGroup>
 
   <ItemGroup>
     <Page Include="App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TechnicalAuditModule\TechnicalAuditModule.csproj" />
   </ItemGroup>
 
 </Project>

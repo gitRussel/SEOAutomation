@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SEOAutomation.Implementation.Model
 {
-    public class TechnicalAuditModel : BindableBase
+    public class TechnicalAuditModel
     {
     }
 }

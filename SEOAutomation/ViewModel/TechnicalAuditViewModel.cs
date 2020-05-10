@@ -1,4 +1,5 @@
-﻿using TechnicalAuditModule;
+﻿using SEOAutomation.Commands;
+using TechnicalAuditModule;
 
 namespace SEOAutomation.ViewModel
 {

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using SEOAutomation.Commands;
+using System.Windows;
 
 namespace SEOAutomation.ViewModel
 {
@@ -7,9 +8,9 @@ namespace SEOAutomation.ViewModel
         private BindableBase _сurrentViewModel;
         private bool _chekedTechnicalAuditView;
 
-        public MyICommand<string> NavigationCommand { get; private set; }
+        public Command<string> NavigationCommand { get; private set; }
 
-        public MyICommand<Window> ExitCommand { get; private set; }
+        public Command<Window> ExitCommand { get; private set; }
 
         /// <summary>
         /// Выбран пункт меню: технический аудит
@@ -40,8 +41,8 @@ namespace SEOAutomation.ViewModel
 
         public ApplicationViewModel()
         {
-            NavigationCommand = new MyICommand<string>(OnNav);
-            ExitCommand = new MyICommand<Window>(OnExit);
+            NavigationCommand = new Command<string>(OnNav);
+            ExitCommand = new Command<Window>(OnExit);
 
             CurrentViewModel = TechnicalAuditVM;
             ChekedTechnicalAuditView = true;

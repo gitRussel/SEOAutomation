@@ -4,9 +4,32 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SEOAutomation"
+        xmlns:viewModels ="clr-namespace:SEOAutomation.Implementation.ViewModel"
+        xmlns:views ="clr-namespace:SEOAutomation.Implementation.View"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
 
+    <Window.Resources>
+
+        <DataTemplate DataType="{x:Type viewModels:TechnicalAuditViewModel}">
+            <views:TechnicalAuditView/>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid>
+        <Menu Height="31" VerticalAlignment="Top" HorizontalContentAlignment="Stretch" Grid.ColumnSpan="2">
+            <MenuItem x:Name="MenuTechnicalAudit" Header="Технический аудит"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Center"
+                      IsEnabled="{Binding ChekedTechnicalAuditView, Mode=TwoWay}">
+                <MenuItem x:Name="MenuExitApp" Header="Выход" 
+                          Command="{Binding ExitCommand, Mode=OneWay}"
+                          CommandParameter="{Binding ElementName=MyMainWindow}"/>
+            </MenuItem>
+        </Menu>
+
+        <Grid x:Name="MainContent" Margin="0,30,0,0">
+            <ContentControl Content="{Binding CurrentViewModel}" Margin="0,0,0,0"/>
+        </Grid>
     </Grid>
 </Window>

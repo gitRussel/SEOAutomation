@@ -12,7 +12,7 @@ namespace TechnicalAuditModule
         public ConfigurationService(IConfiguration config)
         {
             _config = config;
-            string key = _config["PageSpeedInsights:ServiceApiKey"]
+            string key = _config["PageSpeedInsights:ServiceApiKey"];
         }
 
     }

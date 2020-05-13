@@ -10,9 +10,9 @@ namespace SEOAutomation.ViewModel
 
         public string Url { get => _url; set { _url = value; OnPropertyChanged("Url"); } }
 
-        public IAsyncCommand CountUrlBytesCommand { get; private set; }
+        public int ByteCount { get => _byteCount; set { _byteCount = value; OnPropertyChanged("ByteCount"); } } 
 
-        public int ByteCount { get => _byteCount; set { _byteCount = value; OnPropertyChanged("ByteCount"); } } // Raises PropertyChanged
+        public IAsyncCommand CountUrlBytesCommand { get; private set; }
 
         public TechnicalAuditViewModel()
         {
@@ -20,6 +20,7 @@ namespace SEOAutomation.ViewModel
             CountUrlBytesCommand = new AsyncCommand(async () =>
             {
                 ByteCount = await MyService.DownloadAndCountBytesAsync(Url);
+                ApplicationService a = new ApplicationService();
             });
         }
     }

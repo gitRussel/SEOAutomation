@@ -7,8 +7,7 @@ namespace TechnicalAuditModule
 {
     public static class MyService
     {
-        public static async Task<int> DownloadAndCountBytesAsync(string url,
-          CancellationToken token = new CancellationToken())
+        public static async Task<int> DownloadAndCountBytesAsync(string url, CancellationToken token = new CancellationToken())
         {
             await Task.Delay(TimeSpan.FromSeconds(3), token).ConfigureAwait(false);
             var client = new HttpClient();

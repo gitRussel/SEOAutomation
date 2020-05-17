@@ -7,9 +7,27 @@ namespace TechnicalAuditModule
 {
     public class ApplicationService : IApplicationService
     {
-        public Task<int> CalculationPageLoadingSpeed()
+        IConfigurationService configuration { get; set; }
+
+        ILoggerService loggerService{ get; set; }
+
+        ILogger logger { get; set; }
+
+        PageSpeedService servicePageSpeed { get; set; }
+
+        public ApplicationService()
         {
-            throw new NotImplementedException();
+            configuration = new ConfigurationService();
+            loggerService = new LoggerService();
+            logger = loggerService.Create("App");
+
+
+            servicePageSpeed = new PageSpeedService(logger, configuration);
+        }
+
+        public async Task CalculationPageLoadingSpeed(string url)
+        {
+           await servicePageSpeed.CalculatePageSpeedAsync(url);
         }
     }
 }

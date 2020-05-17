@@ -13,6 +13,6 @@ namespace TechnicalAuditModule
         /// <summary>
         /// Расчёт скрости загрузки страницы
         /// </summary>        
-        Task<int> CalculationPageLoadingSpeed();
+        Task CalculationPageLoadingSpeed(string url);
     }
 }

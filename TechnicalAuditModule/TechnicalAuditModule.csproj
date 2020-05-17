@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="5.2.0" />
+    <PackageReference Include="Google.Apis.PagespeedInsights.v5" Version="1.45.0.1903" />
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="3.0.0" />
     <PackageReference Include="NLog" Version="4.7.0" />
     <PackageReference Include="NLog.Config" Version="4.7.0" />

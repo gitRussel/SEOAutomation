@@ -19,9 +19,11 @@ namespace SEOAutomation.ViewModel
             Url = "http://www.example.com/";
             CountUrlBytesCommand = new AsyncCommand(async () =>
             {
-                ByteCount = await MyService.DownloadAndCountBytesAsync(Url);
                 ApplicationService a = new ApplicationService();
+                await a.CalculationPageLoadingSpeed(Url);
             });
+
+            
         }
     }
 }

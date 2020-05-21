@@ -34,10 +34,15 @@ namespace TechnicalAuditModule
                 Url = url,
                 Strategy = PagespeedapiResource.RunpagespeedRequest.StrategyEnum.DESKTOP,
                 Locale = "ru",
-                Category = PagespeedapiResource.RunpagespeedRequest.CategoryEnum.SEO
+                Category = PagespeedapiResource.RunpagespeedRequest.CategoryEnum.PERFORMANCE
             };
 
-            var result = await request.ExecuteAsync();
+            PagespeedApiPagespeedResponseV5 result = await request.ExecuteAsync();
+
+            var cruxMetrix = result.LoadingExperience.Metrics;
+
+            string FCP = cruxMetrix["FIRST_CONTENTFUL_PAINT_MS"].Category;
+            string FIP = cruxMetrix["FIRST_INPUT_DELAY_MS"].Category;
 
          }
     }

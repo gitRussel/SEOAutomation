@@ -30,9 +30,6 @@
                       VerticalAlignment="Center"
                       HorizontalAlignment="Center"
                       IsEnabled="{Binding ChekedTechnicalAuditView, Mode=TwoWay}">
-                <MenuItem x:Name="MenuExitApp" Header="Выход" 
-                          Command="{Binding ExitCommand, Mode=OneWay}"
-                          CommandParameter="{Binding ElementName=MyMainWindow}"/>
             </MenuItem>
         </Menu>
 

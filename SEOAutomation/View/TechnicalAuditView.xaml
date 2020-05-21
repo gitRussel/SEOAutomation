@@ -14,9 +14,15 @@
         xmlns:local="clr-namespace:SEOAutomation.View"
         mc:Ignorable="d"
         d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <TextBox HorizontalAlignment="Left" Margin="362,106,0,0"  Text="{Binding Url}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="GO" Command="{Binding CountUrlBytesCommand}" HorizontalAlignment="Left" Margin="362,172,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.611,-0.267"/>
-        <TextBox HorizontalAlignment="Left" Margin="362,225,0,0" Text="{Binding ByteCount}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+    <Grid Grid.Column="1" Grid.Row="2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <TextBox Grid.Row="0" MinWidth="400" Margin="0,10,0,0"  Text="{Binding Url}"  VerticalAlignment="Top" HorizontalAlignment="Center" />
+        <Button Grid.Row="0" Content="Анализировать" Margin="0,0,0,0"  Command="{Binding AnalyzeCommand}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
     </Grid>
 </UserControl>

@@ -18,4 +18,8 @@
     <ProjectReference Include="..\TechnicalAuditModule\TechnicalAuditModule.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>

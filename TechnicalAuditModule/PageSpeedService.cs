@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Google.Apis.Services;
-using Google.Apis.PagespeedInsights.v5;
+﻿using Google.Apis.PagespeedInsights.v5;
 using Google.Apis.PagespeedInsights.v5.Data;
-using Microsoft.Extensions.Configuration;
+using Google.Apis.Services;
 using System.Threading.Tasks;
 
 namespace TechnicalAuditModule
@@ -44,6 +40,6 @@ namespace TechnicalAuditModule
             string FCP = cruxMetrix["FIRST_CONTENTFUL_PAINT_MS"].Category;
             string FIP = cruxMetrix["FIRST_INPUT_DELAY_MS"].Category;
 
-         }
+        }
     }
 }

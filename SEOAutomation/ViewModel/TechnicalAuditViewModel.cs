@@ -30,7 +30,7 @@ namespace SEOAutomation.ViewModel
             {
                 IsBusy = true;
                 ApplicationService a = new ApplicationService();
-                await a.CalculationPageLoadingSpeed(Url);
+               var result = await a.CalculationPageLoadingSpeed(Url);
             }
             finally
             {

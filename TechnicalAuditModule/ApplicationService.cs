@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Google.Apis.PagespeedInsights.v5.Data;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,9 +26,9 @@ namespace TechnicalAuditModule
             servicePageSpeed = new PageSpeedService(logger, configuration);
         }
 
-        public async Task CalculationPageLoadingSpeed(string url)
+        public async Task<PagespeedApiPagespeedResponseV5> CalculationPageLoadingSpeed(string url)
         {
-           await servicePageSpeed.CalculatePageSpeedAsync(url);
+           return await servicePageSpeed.CalculatePageSpeedAsync(url);
         }
     }
 }

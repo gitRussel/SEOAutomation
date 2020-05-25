@@ -15,7 +15,7 @@
         xmlns:viewModels ="clr-namespace:SEOAutomation.ViewModel"
         xmlns:views ="clr-namespace:SEOAutomation.View"
         mc:Ignorable="d"
-        Title="MainWindow" MinHeight="450" MinWidth="800">
+        Title="SEOAutomation" MinHeight="450" MinWidth="800" Height="450" Width="800" >
 
     <Window.Resources>
 

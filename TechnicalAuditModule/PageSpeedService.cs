@@ -23,7 +23,7 @@ namespace TechnicalAuditModule
             });
         }
 
-        internal async Task CalculatePageSpeedAsync(string url)
+        internal async Task<PagespeedApiPagespeedResponseV5> CalculatePageSpeedAsync(string url)
         {
             var request = new PagespeedapiResource.RunpagespeedRequest(service)
             {
@@ -40,6 +40,7 @@ namespace TechnicalAuditModule
             string FCP = cruxMetrix["FIRST_CONTENTFUL_PAINT_MS"].Category;
             string FIP = cruxMetrix["FIRST_INPUT_DELAY_MS"].Category;
 
+            return result;
         }
     }
 }

@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Google.Apis.PagespeedInsights.v5.Data;
 using System.Threading.Tasks;
+using SEOAutomationContracts;
 
 namespace TechnicalAuditModule
 {
@@ -13,6 +12,6 @@ namespace TechnicalAuditModule
         /// <summary>
         /// Расчёт скрости загрузки страницы
         /// </summary>        
-        Task CalculationPageLoadingSpeed(string url);
+        Task<SpeedTestValues> CalculationPageLoadingSpeed(string url);
     }
 }

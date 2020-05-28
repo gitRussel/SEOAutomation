@@ -1,6 +1,7 @@
 ﻿using SEOAutomation.Commands;
 using System.Threading.Tasks;
 using TechnicalAuditModule;
+using SEOAutomationContracts;
 
 namespace SEOAutomation.ViewModel
 {
@@ -30,7 +31,7 @@ namespace SEOAutomation.ViewModel
             {
                 IsBusy = true;
                 ApplicationService a = new ApplicationService();
-               var result = await a.CalculationPageLoadingSpeed(Url);
+                var result = await a.CalculationPageLoadingSpeed(Url);
             }
             finally
             {

@@ -1,6 +1,7 @@
 ﻿using Google.Apis.PagespeedInsights.v5;
 using Google.Apis.PagespeedInsights.v5.Data;
 using Google.Apis.Services;
+using SEOAutomationContracts;
 using System.Threading.Tasks;
 
 namespace TechnicalAuditModule
@@ -23,7 +24,7 @@ namespace TechnicalAuditModule
             });
         }
 
-        internal async Task<PagespeedApiPagespeedResponseV5> CalculatePageSpeedAsync(string url)
+        internal async Task<SpeedTestValues> CalculatePageSpeedAsync(string url)
         {
             var request = new PagespeedapiResource.RunpagespeedRequest(service)
             {
@@ -33,12 +34,18 @@ namespace TechnicalAuditModule
                 Category = PagespeedapiResource.RunpagespeedRequest.CategoryEnum.PERFORMANCE
             };
 
-            PagespeedApiPagespeedResponseV5 result = await request.ExecuteAsync();
+            PagespeedApiPagespeedResponseV5 response = await request.ExecuteAsync();
 
-            var cruxMetrix = result.LoadingExperience.Metrics;
+            var cruxMetrix = response.LoadingExperience.Metrics;
 
             string FCP = cruxMetrix["FIRST_CONTENTFUL_PAINT_MS"].Category;
             string FIP = cruxMetrix["FIRST_INPUT_DELAY_MS"].Category;
+
+            var result = new SpeedTestValues
+            {
+
+            };
+
 
             return result;
         }

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using SEOAutomationContracts;
 
 namespace TechnicalAuditModule
 {
@@ -26,7 +27,7 @@ namespace TechnicalAuditModule
             servicePageSpeed = new PageSpeedService(logger, configuration);
         }
 
-        public async Task<PagespeedApiPagespeedResponseV5> CalculationPageLoadingSpeed(string url)
+        public async Task<SpeedTestValues> CalculationPageLoadingSpeed(string url)
         {
            return await servicePageSpeed.CalculatePageSpeedAsync(url);
         }

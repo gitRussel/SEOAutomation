@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEOAutomation", "SEOAutomat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechnicalAuditModule", "TechnicalAuditModule\TechnicalAuditModule.csproj", "{90A25136-2F80-41C5-8803-88FC12063D97}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEOAutomationContracts", "SEOAutomationContracts\SEOAutomationContracts.csproj", "{3874A1B9-0F3E-4E38-BAF4-000F5EB5458D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{90A25136-2F80-41C5-8803-88FC12063D97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90A25136-2F80-41C5-8803-88FC12063D97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90A25136-2F80-41C5-8803-88FC12063D97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3874A1B9-0F3E-4E38-BAF4-000F5EB5458D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3874A1B9-0F3E-4E38-BAF4-000F5EB5458D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3874A1B9-0F3E-4E38-BAF4-000F5EB5458D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3874A1B9-0F3E-4E38-BAF4-000F5EB5458D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SEOAutomationContracts;
+using System.Threading.Tasks;
+using TechnicalAuditModule;
 
 namespace SEOAutomation.Models
 {
@@ -17,6 +17,23 @@ namespace SEOAutomation.Models
         private string _fciL;
         private string _eilL;
 
+        private string _url;
+
+        public TechnicalAuditModel()
+        {
+            Url = "http://example.com/";
+        }
+
+        public string Url
+        {
+            get => _url;
+            set
+            {
+                _url = value;
+                OnPropertyChanged("Url");
+            }
+
+        }
         public string FCPCategory
         {
             get => _fcpC;
@@ -70,7 +87,7 @@ namespace SEOAutomation.Models
         public string FmpLighthous
         {
             get => _fmpL;
-            set   
+            set
             {
                 _fmpL = value;
                 OnPropertyChanged("FmpLighthous");
@@ -79,21 +96,42 @@ namespace SEOAutomation.Models
 
         public string FciLighthous
         {
-            get => _fciL; 
-            set 
+            get => _fciL;
+            set
             {
-                _fciL = value; 
-                OnPropertyChanged("FciLighthous"); 
+                _fciL = value;
+                OnPropertyChanged("FciLighthous");
             }
         }
 
         public string EilLighthous
         {
-            get => _eilL; set 
-            { 
-                _eilL = value; 
-                OnPropertyChanged("EilLighthous"); 
+            get => _eilL; set
+            {
+                _eilL = value;
+                OnPropertyChanged("EilLighthous");
             }
+        }
+
+        /// <summary>
+        /// Заполнение модели
+        /// </summary>
+        public async Task FillModelAsync()
+        {
+            var a = new ApplicationService();
+            SpeedTestValues result = await a.CalculationPageLoadingSpeed(Url);
+
+            FCPCategory = result.FCPCategory;
+            FIDCategory = result.FIDCategory;
+            FCPLighthous = result.FCPLighthous;
+            SiLighthous = result.SiLighthous;
+            TtiLighthous = result.TtiLighthous;
+            FmpLighthous = result.FmpLighthous;
+            FciLighthous = result.FciLighthous;
+            EilLighthous = result.EilLighthous;
+
+            string uri = "https://validator.nu/?doc=" + Url + "&out=json";
+            string hey = await HtmlValidationService.HtmlCheckAsync(uri);
         }
     }
 }

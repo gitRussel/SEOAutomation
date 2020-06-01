@@ -22,12 +22,12 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
-        <TextBox Grid.Row="0" MinWidth="400" Margin="0,10,0,0"  Text="{Binding Url}"  VerticalAlignment="Top" HorizontalAlignment="Center" />
+        <TextBox Grid.Row="0" MinWidth="400" Margin="0,10,0,0"  Text="{Binding AuditModel.Url, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  VerticalAlignment="Top" HorizontalAlignment="Center" />
         <Button Grid.Row="0" Content="Анализировать" Margin="0,0,0,0"  Command="{Binding AnalyzeCommand}" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
         <Grid Grid.Row="1" Margin="30,30">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -39,10 +39,22 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Label Grid.Column="0" Grid.Row="0" Content="Первая отрисовка контента (FCP)"/>
-            <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Margin="0,0,00,0" Content="first try"/>
-            <Label Grid.Column="0" Grid.Row="1" Content="Первая задержка ввода (FID)"/>
-            <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,0,0" Content="first try"/>
+            <Label Grid.Column="0" Grid.Row="0" Content="Первая отрисовка контента"/>
+            <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Margin="0,0,0,0" Content="{Binding AuditModel.FCPCategory, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="0" Grid.Row="1" Content="Первая задержка ввода"/>
+            <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,0,0" Content="{Binding AuditModel.FIDCategory, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="0" Grid.Row="2" Content="Первая отрисовка контента (мс)"/>
+            <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Margin="0,0,00,0" Content="{Binding AuditModel.FCPLighthous, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="0" Grid.Row="3" Content="Speed index (мс)"/>
+            <Label Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" Margin="0,0,0,0" Content="{Binding AuditModel.SiLighthous, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="0" Grid.Row="4" Content="Time To Interactive (мс)"/>
+            <Label Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" Margin="0,0,0,0" Content="{Binding AuditModel.TtiLighthous, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="0" Grid.Row="5" Content="First Meaningful Pain (мс)"/>
+            <Label Grid.Column="0" Grid.Row="5" HorizontalAlignment="Right" Margin="0,0,0,0" Content="{Binding AuditModel.FmpLighthous, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="0" Grid.Row="6" Content="First CPU Idle (мс)"/>
+            <Label Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right" Margin="0,0,0,0" Content="{Binding AuditModel.FciLighthous, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="0" Grid.Row="7" Content="Estimated Input Latency (мс)"/>
+            <Label Grid.Column="0" Grid.Row="7" HorizontalAlignment="Right" Margin="0,0,0,0" Content="{Binding AuditModel.EilLighthous, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
     </Grid>
 </UserControl>

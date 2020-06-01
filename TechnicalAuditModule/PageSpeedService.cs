@@ -29,23 +29,27 @@ namespace TechnicalAuditModule
             var request = new PagespeedapiResource.RunpagespeedRequest(service)
             {
                 Url = url,
-                Strategy = PagespeedapiResource.RunpagespeedRequest.StrategyEnum.DESKTOP,
                 Locale = "ru",
+                Strategy = PagespeedapiResource.RunpagespeedRequest.StrategyEnum.DESKTOP,
                 Category = PagespeedapiResource.RunpagespeedRequest.CategoryEnum.PERFORMANCE
             };
 
             PagespeedApiPagespeedResponseV5 response = await request.ExecuteAsync();
 
             var cruxMetrix = response.LoadingExperience.Metrics;
-
-            string FCP = cruxMetrix["FIRST_CONTENTFUL_PAINT_MS"].Category;
-            string FIP = cruxMetrix["FIRST_INPUT_DELAY_MS"].Category;
+            var lightHous = response.LighthouseResult.Audits;
 
             var result = new SpeedTestValues
             {
-
+                FCPCategory = cruxMetrix["FIRST_CONTENTFUL_PAINT_MS"].Category,
+                FIDCategory = cruxMetrix["FIRST_INPUT_DELAY_MS"].Category,
+                FCPLighthous = lightHous["first-contentful-paint"].DisplayValue,
+                SiLighthous = lightHous["speed-index"].DisplayValue,
+                TtiLighthous = lightHous["interactive"].DisplayValue,
+                FmpLighthous = lightHous["first-meaningful-paint"].DisplayValue,
+                FciLighthous = lightHous["first-cpu-idle"].DisplayValue,
+                EilLighthous = lightHous["estimated-input-latency"].DisplayValue
             };
-
 
             return result;
         }

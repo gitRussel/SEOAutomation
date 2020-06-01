@@ -1,37 +1,45 @@
 ﻿using SEOAutomation.Commands;
+using SEOAutomation.Models;
 using System.Threading.Tasks;
-using TechnicalAuditModule;
-using SEOAutomationContracts;
 
 namespace SEOAutomation.ViewModel
 {
     public class TechnicalAuditViewModel : BindableBase
     {
-        private string _url;
         private bool _isBusy;
+
+        public TechnicalAuditModel AuditModel { get; set; }
+
+        public IErrorHandler ErrorHandler { get; set; }
+
         public bool IsBusy
         {
             get => _isBusy;
-            private set => SetProperty(ref _isBusy, value);
+            private set
+            {
+                SetProperty(ref _isBusy, value);
+                AnalyzeCommand.RaiseCanExecuteChanged();
+            }
         }
 
-        public string Url { get => _url; set { _url = value; OnPropertyChanged("Url"); } }
-
-        public IAsyncCommand AnalyzeCommand { get; private set; }
+        public AsyncCommand AnalyzeCommand { get; private set; }
 
         public TechnicalAuditViewModel()
         {
-            Url = "http://www.example.com/";
-            AnalyzeCommand = new AsyncCommand(AnalyzeExecuteAsync, CanExecuteAnalyze);
+            AuditModel = new TechnicalAuditModel();
+
+            ErrorHandler = new ErrorHandler();
+
+            AnalyzeCommand = new AsyncCommand(AnalyzeExecuteAsync, CanExecuteAnalyze, ErrorHandler);
         }
+
 
         private async Task AnalyzeExecuteAsync()
         {
             try
             {
                 IsBusy = true;
-                ApplicationService a = new ApplicationService();
-                var result = await a.CalculationPageLoadingSpeed(Url);
+                await AuditModel.FillModelAsync();
             }
             finally
             {

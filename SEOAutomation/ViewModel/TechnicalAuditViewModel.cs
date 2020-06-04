@@ -1,5 +1,6 @@
 ﻿using SEOAutomation.Commands;
 using SEOAutomation.Models;
+using System;
 using System.Threading.Tasks;
 
 namespace SEOAutomation.ViewModel
@@ -18,11 +19,13 @@ namespace SEOAutomation.ViewModel
             private set
             {
                 SetProperty(ref _isBusy, value);
-                AnalyzeCommand.RaiseCanExecuteChanged();
+                AnalyzeSpeedCommand.RaiseCanExecuteChanged();
             }
         }
 
-        public AsyncCommand AnalyzeCommand { get; private set; }
+        public AsyncCommand AnalyzeSpeedCommand { get; private set; }
+
+        public AsyncCommand AnalyzeHtmlCommand { get; private set; }
 
         public TechnicalAuditViewModel()
         {
@@ -30,16 +33,30 @@ namespace SEOAutomation.ViewModel
 
             ErrorHandler = new ErrorHandler();
 
-            AnalyzeCommand = new AsyncCommand(AnalyzeExecuteAsync, CanExecuteAnalyze, ErrorHandler);
+            AnalyzeSpeedCommand = new AsyncCommand(AnalyzeSpeedExecuteAsync, CanExecuteAnalyze, ErrorHandler);
+
+            AnalyzeHtmlCommand = new AsyncCommand(AnalyzeHtmlValidationExecuteAsync, CanExecuteAnalyze, ErrorHandler);
         }
 
-
-        private async Task AnalyzeExecuteAsync()
+        private async Task AnalyzeHtmlValidationExecuteAsync()
         {
             try
             {
                 IsBusy = true;
-                await AuditModel.FillModelAsync();
+                await AuditModel.FillHtmlValidationModelAsync();
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        private async Task AnalyzeSpeedExecuteAsync()
+        {
+            try
+            {
+                IsBusy = true;
+                await AuditModel.FillSpeedModelAsync();
             }
             finally
             {

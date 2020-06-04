@@ -17,6 +17,8 @@ namespace TechnicalAuditModule
 
         PageSpeedService servicePageSpeed { get; set; }
 
+        HtmlValidationService htmlValidationService { get; set; }
+
         public ApplicationService()
         {
             configuration = new ConfigurationService();
@@ -25,11 +27,18 @@ namespace TechnicalAuditModule
 
 
             servicePageSpeed = new PageSpeedService(logger, configuration);
+
+            htmlValidationService = new HtmlValidationService(logger, configuration);
         }
 
         public async Task<SpeedTestValues> CalculationPageLoadingSpeed(string url)
         {
            return await servicePageSpeed.CalculatePageSpeedAsync(url);
+        }
+
+        public async Task<string> HtmlValidationAsync(string url)
+        {
+            return await htmlValidationService.HtmlCheckAsync(url);
         }
     }
 }

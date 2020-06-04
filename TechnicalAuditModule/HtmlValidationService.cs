@@ -4,10 +4,18 @@ using System.Threading.Tasks;
 
 namespace TechnicalAuditModule
 {
-    public static class HtmlValidationService
+    public  class HtmlValidationService
     {
+        private ILogger _logger;
+        private IConfigurationService _config;
 
-        public static async Task<string> HtmlCheckAsync(string uri)
+        internal HtmlValidationService(ILogger logger, IConfigurationService config)
+        {
+            _logger = logger;
+            _config = config;
+
+        }
+            public  async Task<string> HtmlCheckAsync(string uri)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
             request.UserAgent = ".NET Framework Test Client";

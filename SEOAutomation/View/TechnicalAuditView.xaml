@@ -56,6 +56,21 @@
             <Label Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right" Margin="0,0,0,0" Content="{Binding AuditModel.FciLighthous, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Grid.Column="0" Grid.Row="7" Content="Estimated Input Latency (мс)"/>
             <Label Grid.Column="0" Grid.Row="7" HorizontalAlignment="Right" Margin="0,0,0,0" Content="{Binding AuditModel.EilLighthous, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <ListBox Grid.Column="1" Grid.Row="0" Grid.RowSpan="8"
+                ItemsSource="{Binding AuditModel.ValidationMessages.Messages, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="3"
+                ScrollViewer.VerticalScrollBarVisibility="Auto"
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="{Binding Type}"/>
+                            <TextBlock Text="{Binding Message}"/>
+                            <TextBlock Text="{Binding Extract}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </Grid>
     </Grid>
 </UserControl>

@@ -20,6 +20,8 @@ namespace SEOAutomation.Models
 
         private string _url;
 
+        private ValidationMessages _validationMessages;
+
         /// <summary>
         /// Контейнер сервисов
         /// </summary>
@@ -106,10 +108,21 @@ namespace SEOAutomation.Models
         }
         public string EilLighthous
         {
-            get => _eilL; set
+            get => _eilL; 
+            set
             {
                 _eilL = value;
                 OnPropertyChanged("EilLighthous");
+            }
+        }
+
+        public ValidationMessages ValidationMessages
+        {
+            get => _validationMessages; 
+            set
+            {
+                _validationMessages = value;
+                OnPropertyChanged("ValidationMessages");
             }
         }
 
@@ -138,7 +151,7 @@ namespace SEOAutomation.Models
             string uri = "https://validator.nu/?doc=" + Url + "&out=json";
             string json = await applicationService.HtmlValidationAsync(uri);
 
-            ValidationMessages info = JsonConvert.DeserializeObject<ValidationMessages>(json);
+            ValidationMessages = JsonConvert.DeserializeObject<ValidationMessages>(json);
         }
     }
 }

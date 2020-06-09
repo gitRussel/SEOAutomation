@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="TechnicalAuditModule.ApplicationService" BaseTypeListCollapsed="true">
+    <Position X="1.5" Y="1.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAADAAAAIAAAEACAAAAAAAAIAAAQAAA=</HashCode>
+      <FileName>ApplicationService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TechnicalAuditModule.ConfigurationService" BaseTypeListCollapsed="true">
+    <Position X="8.25" Y="4.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>ConfigurationService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TechnicalAuditModule.HtmlValidationService">
+    <Position X="10.25" Y="1.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAABAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HtmlValidationService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechnicalAuditModule.Logger" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAYAAAAAAAAAAAAgAABEAAAAAAEAEAAA=</HashCode>
+      <FileName>Logger.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TechnicalAuditModule.LoggerService" BaseTypeListCollapsed="true">
+    <Position X="1.5" Y="5.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>LoggerService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TechnicalAuditModule.PageSpeedService">
+    <Position X="13.25" Y="1.25" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>IAAIAAAAAAAAAAAAAAAAAAAAIAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>PageSpeedService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="TechnicalAuditModule.IApplicationService">
+    <Position X="5.75" Y="1.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>IApplicationService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TechnicalAuditModule.IConfigurationService">
+    <Position X="10.75" Y="4.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>IConfigurationService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TechnicalAuditModule.ILogger">
+    <Position X="6.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAYAAAAAAAAAAAAAAABEAAAAAAEAEAAA=</HashCode>
+      <FileName>ILogger.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TechnicalAuditModule.ILoggerService">
+    <Position X="1.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>ILoggerService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

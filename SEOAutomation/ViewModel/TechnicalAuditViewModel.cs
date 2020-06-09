@@ -35,20 +35,14 @@ namespace SEOAutomation.ViewModel
 
             AnalyzeSpeedCommand = new AsyncCommand(AnalyzeSpeedExecuteAsync, CanExecuteAnalyze, ErrorHandler);
 
-            AnalyzeHtmlCommand = new AsyncCommand(AnalyzeHtmlValidationExecuteAsync, CanExecuteAnalyze, ErrorHandler);
+            AnalyzeHtmlCommand = new AsyncCommand(AnalyzeHtmlValidationExecuteAsync);
         }
 
         private async Task AnalyzeHtmlValidationExecuteAsync()
         {
-            try
-            {
-                IsBusy = true;
+           
                 await AuditModel.FillHtmlValidationModelAsync();
-            }
-            finally
-            {
-                IsBusy = false;
-            }
+           
         }
 
         private async Task AnalyzeSpeedExecuteAsync()

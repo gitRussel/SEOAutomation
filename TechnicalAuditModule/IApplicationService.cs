@@ -13,5 +13,10 @@ namespace TechnicalAuditModule
         /// Расчёт скрости загрузки страницы
         /// </summary>        
         Task<SpeedTestValues> CalculationPageLoadingSpeed(string url);
+
+        /// <summary>
+        /// Валидация верстки
+        /// </summary>
+        Task<string> HtmlValidationAsync(string url);
     }
 }
